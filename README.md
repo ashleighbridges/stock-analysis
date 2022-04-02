@@ -10,7 +10,7 @@ Throughout the module, I created macros to allow Steve to analyze two sets of st
 ### Refactoring the Code
 The largest change made to the original code was to create three ouput arrays (tickerVolumes, tickerStartingPrices, and tickerEndingPrices) to store the data for when the loops run. I also kept the array from the original code (tickers) that assigned a numerical value to each of the 12 stock ticker options so they can be easily inserted into the loop code. To match the three new arrays to the tickers array, I created a variable named tickerIndex. From here, I was able to use the majority of the original code to create the nested loops. I also added a line to the refactored code to automate the increase of the tickerIndex value at the end of the second (nested) For loop. Examples of this section of both codes are below for comparison:
 
-#### Original
+#### *Original*
 ```
 'Prepare for analysis of tickers
         'initialize variables for starting and ending price
@@ -53,7 +53,7 @@ The largest change made to the original code was to create three ouput arrays (t
     
         Next i
 ```
-#### Refactored
+#### *Refactored*
 ```
 'Activate data worksheet
     Worksheets(yearValue).Activate
@@ -117,10 +117,10 @@ The largest change made to the original code was to create three ouput arrays (t
 ### Stock Performance Comparison
 As evidenced by the results below, most of the group of stocks Styve wanted analyzed actually had decreased returns from 2017 to 2018. Only two of the twelve analyzed stocks (ENPH and RUN) produced a positive return value in 2018. One other stock (TERP) also increased it's return value in 2018, however the value is still negative. 
 
-#### 2017
+#### *2017*
 ![Stock_Values_2017](https://user-images.githubusercontent.com/100883212/161404140-52c4dc21-c077-426c-bcf7-c9deb8871c10.png)
 
-#### 2018
+#### *2018*
 ![Stock_Values_2018](https://user-images.githubusercontent.com/100883212/161404146-f087b7c7-5621-4b5d-8d3c-02ff57ff717b.png)
 
 When Steve makes a stock investment recommendation to his parents, he should consider recommending only ENPH and RUN. He also might consider analyzing additional tickers to see where other positive recommendations can be made.
@@ -128,19 +128,20 @@ When Steve makes a stock investment recommendation to his parents, he should con
 ### Execution Time Comparison
 By refactoring the code, I was able to reduce the execution time for the analysis for the 2017 stocks by ~86%.
 
-#### 2017 Original
+#### *2017 Original*
 ![VBA_Challenge_2017o](https://user-images.githubusercontent.com/100883212/161404367-36eafd9e-3aa5-4ed1-82f3-710b47f53afd.png)
 
-#### 2017 Refactored
+#### *2017 Refactored*
 ![VBA_Challenge_2017r](https://user-images.githubusercontent.com/100883212/161404370-2bfbdc02-d393-4193-95e0-644abb2f0c63.png)
 
 I was also able to reduce the execution time for the analysis of the 2018 stocks by ~85%
 
-#### 2018 Original
+#### *2018 Original*
 ![VBA_Challenge_2018o](https://user-images.githubusercontent.com/100883212/161404373-f965a57c-520f-4805-a0f7-62c56a9580ea.png)
 
-#### 2018 Refactored
+#### *2018 Refactored*
 ![VBA_Challenge_2018r](https://user-images.githubusercontent.com/100883212/161404374-9a6e5069-b033-434e-ba62-2743f5ebbce3.png)
 
 ## Summary
 
+The biggest advantage to refactoring an existing code is the opportunity to reduce the execution time for running the code - usually by quite a bit as evidenced in this project. Refactoring can also allow you the chance to substitute any hard-coded values for variables, which makes for easier editing of the code in the future. Refactoring code also gives the opportunity to possibly combine portions of the script, reducing the overall size and allowing less room for errors. The biggest disadvantage to refactoring an existing code is it is easy to break a code that you have already tested and ensured works as intended. These errors can be difficult to debug, which is stressful and time-consuming. I would recommend only refactoring when you believe it to be necessary. I would also recommend creating a new module within the Visual Basic Editor to copy the original code into to refactor or make sure you have a version of the original code saved either as a text file so it can be referred to as needed.
